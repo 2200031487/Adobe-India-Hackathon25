@@ -1,4 +1,4 @@
-# 🔍 Challenge 1B: Persona-Driven Document Intelligence  
+# 🔍 Round 1B: Persona-Driven Document Intelligence  
 **Theme**: “Connect What Matters — For the User Who Matters”  
 **Event**: Adobe India Hackathon 2025
 
@@ -6,7 +6,7 @@
 
 ## 🧠 Overview
 
-This is my solution for **Challenge 1B** of the **Adobe India Hackathon 2025**.
+This is my solution for **Round 1B** of the **Adobe India Hackathon 2025**.
 
 The challenge involves designing a system that acts as an **intelligent document analyst**. The system is capable of extracting and prioritizing the **most relevant sections** from a collection of PDF documents — tailored to a **specific persona** and their **job-to-be-done**.
 
@@ -36,16 +36,20 @@ docker run --rm -v ${PWD}\input:/app/input -v ${PWD}\output:/app/output --networ
 
 ### 🔽 Input
 
-- **PDF Collection**:  
+- **PDF Collection**:
+  
   3–10 related documents from any domain.
 
-- **Persona Definition** (`persona.json`):  
+- **Persona Definition** (`persona.json`):
+  
   JSON file that describes:
+  
   - Persona’s **role**
   - Persona’s **area of expertise**
   - Persona’s **focus areas or responsibilities**
 
-- **Job-to-be-Done**:  
+- **Job-to-be-Done**:
+  
   A specific task, goal, or question that the persona needs to accomplish using the document collection.
 
 ### 📚 Document Domains
@@ -61,11 +65,10 @@ Documents may belong to various fields, such as:
 ### 🔼 Output
 
 - A structured `output.json` file including:
+  
   - Metadata (documents, persona, job, timestamp)
   - Extracted sections with importance ranking
   - Subsection-level refined text summaries
-
-
 
 
 ## 📁 Project Structure
@@ -93,23 +96,22 @@ adobe_round1b/
 | Runtime Environment | CPU-only (AMD64, no GPU)     |
 | Internet Access     | ❌ Not allowed during runtime |
 
-### 📚 Implementation Summary
+## 📚 Implementation Summary
 
-## ✔️ PDF Text Extraction
-Uses PyMuPDF to extract structured content from PDFs
+- ✔️ **PDF Text Extraction**  
+  Uses PyMuPDF to extract structured content from PDFs  
+  Identifies text spans, font sizes, and layout metadata
 
-Identifies text spans, font sizes, and layout metadata
+- ✔️ **Content Ranking Engine**  
+  Uses keyword and semantic matching  
+  Ranks content based on relevance to persona's job
 
-## ✔️ Content Ranking Engine
-Uses keyword and semantic matching
+- ✔️ **Subsection Refinement**  
+  Extracts and summarizes fine-grained snippets within selected sections
 
-Ranks content based on relevance to persona's job
+- ✔️ **Metadata Handling**  
+  Attaches full context: input files, timestamp, persona profile
 
-## ✔️ Subsection Refinement
-Extracts and summarizes fine-grained snippets within selected sections
-
-✔️ Metadata Handling
-Attaches full context: input files, timestamp, persona profile
 
 ### 🧠 Sample Use Cases
 | Test Case         | Persona                      | Job-to-Be-Done                                          |
@@ -119,21 +121,17 @@ Attaches full context: input files, timestamp, persona profile
 | Education         | Chemistry Student            | Study key concepts for exam on reaction kinetics        |
 
 ### 🔎 Testing Strategy
-Tested across documents with:
 
-Different structures (headings, no headings)
+- Tested across documents with:
+  - Different structures (headings, no headings)
+  - Multi-page formats
+  - Multi-domain content (research, financial, educational)
 
-Multi-page formats
+- Validated output:
+  - Matches required JSON schema
+  - Extracted content aligns with job relevance
+  - System runs offline under time/memory constraints
 
-Multi-domain content (research, financial, educational)
-
-Validated output:
-
-Matches required JSON schema
-
-Extracted content aligns with job relevance
-
-System runs offline under time/memory constraints
 
 ### 🧩 Key Modules
 | Module         | Role                                                            |
@@ -142,19 +140,25 @@ System runs offline under time/memory constraints
 | `ranker.py`    | Scores sections based on persona and task alignment             |
 | `main.py`      | Coordinates input/output processing and builds output structure |
 
-### 🧮 Dependencies
+## 🧮 Dependencies
+
+```txt
 PyMuPDF>=1.22.0     # PDF text extraction
+
 Install with:
+
+```txt
 pip install -r requirements.txt
 
-### 🧭 Future Enhancements
-Integrate lightweight NLP models for better semantic matching
 
-Improve multi-page context tracing for long sections
 
-Introduce visual UI for persona input and JSON visualization
+## 🧭 Future Enhancements
 
-Extend to support images and figures in output
+- Integrate lightweight NLP models for better semantic matching  
+- Improve multi-page context tracing for long sections  
+- Introduce visual UI for persona input and JSON visualization  
+- Extend to support images and figures in output  
+
 
 
 
