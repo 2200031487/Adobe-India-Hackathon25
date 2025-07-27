@@ -95,15 +95,61 @@ Uses PyMuPDF to extract structured content from PDFs
 
 Identifies text spans, font sizes, and layout metadata
 
-## Sample Implementation
+✔️ Content Ranking Engine
+Uses keyword and semantic matching
 
-### Current Sample Solution
-The provided implementation demonstrates:
-- **Multi-PDF Processing**: Automatic scanning and processing of all travel guide PDFs
-- **Intelligent Content Ranking**: Keyword-based scoring to identify most relevant sections
-- **Title Detection**: Automatic identification of section headers and important content
-- **Persona-Driven Analysis**: Tailored recommendations based on user requirements
-- **Structured JSON Output**: Comprehensive travel planning data in organized format
+Ranks content based on relevance to persona's job
+
+✔️ Subsection Refinement
+Extracts and summarizes fine-grained snippets within selected sections
+
+✔️ Metadata Handling
+Attaches full context: input files, timestamp, persona profile
+
+🧠 Sample Use Cases
+| Test Case         | Persona                      | Job-to-Be-Done                                          |
+| ----------------- | ---------------------------- | ------------------------------------------------------- |
+| Academic Research | PhD in Computational Biology | Create literature review on GNNs for drug discovery     |
+| Business Analysis | Investment Analyst           | Compare R\&D spending across tech companies (2022–2024) |
+| Education         | Chemistry Student            | Study key concepts for exam on reaction kinetics        |
+
+🔎 Testing Strategy
+Tested across documents with:
+
+Different structures (headings, no headings)
+
+Multi-page formats
+
+Multi-domain content (research, financial, educational)
+
+Validated output:
+
+Matches required JSON schema
+
+Extracted content aligns with job relevance
+
+System runs offline under time/memory constraints
+
+🧩 Key Modules
+| Module         | Role                                                            |
+| -------------- | --------------------------------------------------------------- |
+| `extractor.py` | Parses documents and detects candidate content sections         |
+| `ranker.py`    | Scores sections based on persona and task alignment             |
+| `main.py`      | Coordinates input/output processing and builds output structure |
+
+🧮 Dependencies
+PyMuPDF>=1.22.0     # PDF text extraction
+Install with:
+pip install -r requirements.txt
+🧭 Future Enhancements
+Integrate lightweight NLP models for better semantic matching
+
+Improve multi-page context tracing for long sections
+
+Introduce visual UI for persona input and JSON visualization
+
+Extend to support images and figures in output
+
 
 ### Sample Processing Script (`main.py`)
 ```python
