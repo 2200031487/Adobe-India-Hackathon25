@@ -117,36 +117,6 @@ pdf-processor/
 
 ---
 
-## 🧪 Sample Output Format
-
-```json
-{
-  "title": "Overview Foundation Level Extensions",
-  "outline": [
-    {
-      "level": "H1",
-      "text": "Introduction to the Foundation Level Extensions",
-      "page": 6
-    },
-    {
-      "level": "H2",
-      "text": "2.1 Intended Audience",
-      "page": 7
-    },
-    {
-      "level": "H2",
-      "text": "2.2 Career Paths for Testers",
-      "page": 7
-    },
-    {
-      "level": "H3",
-      "text": "2.3 Learning Objectives",
-      "page": 7
-    }
-  ]
-}
-```
-
 ---
 
 ## 🧮 Dependencies
