@@ -142,13 +142,15 @@ adobe_round1b/
 
 ## 🧮 Dependencies
 
-```txt
+```bash
 PyMuPDF>=1.22.0     # PDF text extraction
+```
 
 Install with:
 
-```txt
+```
 pip install -r requirements.txt
+```
 
 
 
