@@ -11,12 +11,6 @@ By understanding the intent behind the persona and mapping it to the structure a
 The entire pipeline is containerized using Docker, ensuring reproducibility, offline execution, and cross-platform compatibility (AMD64 architecture).
 
 
-## Official Challenge Guidelines
-
-### Submission Requirements
-- **GitHub Project**: Complete code repository with working solution
-- **Dockerfile**: Must be present in the root directory and functional
-- **README.md**: Documentation explaining the solution, models, and libraries used
 
 ### Build Command
 ```bash
