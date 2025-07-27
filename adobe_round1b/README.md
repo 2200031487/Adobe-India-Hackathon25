@@ -2,7 +2,8 @@
 Theme: “Connect What Matters — For the User Who Matters” 
 
 ## Overview
-This is a **solution** for Challenge 1b of the Adobe India Hackathon 2025. The challenge requires implementing a document processing solution that extracts and analyzes travel information from PDF documents to create personalized trip recommendations. The solution must be containerized using Docker and process multiple travel guide PDFs to generate structured JSON output.
+This is my solution for Challenge 1B of the Adobe India Hackathon 2025.
+The challenge focuses on building a document intelligence system that extracts and analyzes travel-related information from multiple PDF guides to generate personalized trip recommendations. My approach processes a collection of travel documents, identifies key destinations, activities, and highlights, and outputs a structured JSON summary. The entire solution is fully containerized using Docker for platform-independent deployment.
 
 ## Official Challenge Guidelines
 
