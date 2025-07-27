@@ -1,18 +1,28 @@
-# Challenge 1b:  Persona-Driven Document Intelligence
-Theme: “Connect What Matters — For the User Who Matters” 
+# 🔍 Challenge 1B: Persona-Driven Document Intelligence  
+**Theme**: “Connect What Matters — For the User Who Matters”  
+**Event**: Adobe India Hackathon 2025
 
-## Overview
-This is my solution for Challenge 1B of the Adobe India Hackathon 2025.
+---
 
-The objective of this challenge is to develop a system that acts as an intelligent document analyst. My solution is designed to extract, analyze, and prioritize the most relevant sections from a collection of PDF documents — all tailored to a specific persona and their job-to-be-done.
+## 🧠 Overview
 
-By understanding the intent behind the persona and mapping it to the structure and content of the documents, this system surfaces only the most useful and actionable insights. It delivers a structured JSON output that reflects the sections most aligned with the user’s goals.
+This is my solution for **Challenge 1B** of the **Adobe India Hackathon 2025**.
 
-The entire pipeline is containerized using Docker, ensuring reproducibility, offline execution, and cross-platform compatibility (AMD64 architecture).
+The challenge involves designing a system that acts as an **intelligent document analyst**. The system is capable of extracting and prioritizing the **most relevant sections** from a collection of PDF documents — tailored to a **specific persona** and their **job-to-be-done**.
 
+My solution is designed to:
+- Understand the **persona's intent**
+- Parse and analyze the document collection
+- Surface only the **most meaningful and actionable insights**
 
+The entire solution is containerized using **Docker**, designed to run offline, and adheres to the AMD64 CPU architecture with strict performance constraints.
 
-### Build Command
+---
+
+## ⚙️ Build & Run Instructions
+
+### 🧱 Build Command
+
 ```bash
 docker build --platform linux/amd64 -t adobe-round1b .
 ```
