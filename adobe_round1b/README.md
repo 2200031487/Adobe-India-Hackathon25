@@ -12,12 +12,12 @@ This is a **sample solution** for Challenge 1b of the Adobe India Hackathon 2025
 
 ### Build Command
 ```bash
-docker build --platform linux/amd64 -t <reponame.someidentifier> .
+docker build --platform linux/amd64 -t adobe-round1b .
 ```
 
 ### Run Command
 ```bash
-docker run --rm -v $(pwd)/input:/app/input:ro -v $(pwd)/output/repoidentifier/:/app/output --network none <reponame.someidentifier>
+docker run --rm -v ${PWD}\input:/app/input -v ${PWD}\output:/app/output --network none adobe-round1b
 ```
 
 ### Critical Constraints
