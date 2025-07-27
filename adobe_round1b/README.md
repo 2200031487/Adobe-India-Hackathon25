@@ -1,4 +1,4 @@
-# Challenge 1b: Travel Planning Document Processing Solution
+# Challenge 1b:  Persona-Driven Document Intelligence
 
 ## Overview
 This is a **sample solution** for Challenge 1b of the Adobe India Hackathon 2025. The challenge requires implementing a document processing solution that extracts and analyzes travel information from PDF documents to create personalized trip recommendations. The solution must be containerized using Docker and process multiple travel guide PDFs to generate structured JSON output.
