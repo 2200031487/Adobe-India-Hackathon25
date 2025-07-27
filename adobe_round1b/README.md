@@ -32,35 +32,39 @@ docker build --platform linux/amd64 -t adobe-round1b .
 docker run --rm -v ${PWD}\input:/app/input -v ${PWD}\output:/app/output --network none adobe-round1b
 ```
 
-### 📌 Problem Requirements
+## 📌 Problem Requirements
 
-🔽 Input
-PDF Collection: 3–10 related documents from any domain
+### 🔽 Input
 
-Persona Definition: JSON file with persona's role, expertise, and objectives
+- **PDF Collection**:  
+  3–10 related documents from any domain.
 
-Job-to-be-Done: Specific task or question based on the persona's intent
+- **Persona Definition** (`persona.json`):  
+  JSON file that describes:
+  - Persona’s **role**
+  - Persona’s **area of expertise**
+  - Persona’s **focus areas or responsibilities**
 
-Documents may come from diverse fields like:
+- **Job-to-be-Done**:  
+  A specific task, goal, or question that the persona needs to accomplish using the document collection.
 
-Academic research
+### 📚 Document Domains
 
-Financial reports
+Documents may belong to various fields, such as:
 
-Educational content
-
-News articles
-
-Domain-specific manuals
+- Academic research  
+- Financial reports  
+- Educational content  
+- News articles  
+- Domain-specific manuals
 
 ### 🔼 Output
-A structured output.json file including:
 
-Metadata (documents, persona, job, timestamp)
+- A structured `output.json` file including:
+  - Metadata (documents, persona, job, timestamp)
+  - Extracted sections with importance ranking
+  - Subsection-level refined text summaries
 
-Extracted sections with importance ranking
-
-Subsection-level refined text summaries
 
 
 
