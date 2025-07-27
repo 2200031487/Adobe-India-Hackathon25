@@ -32,10 +32,10 @@ It's time to read between the lines. Connect the dots. And build a PDF experienc
 
 ## Challenge Solutions
 
-### [Round 1a: PDF Processing Solution](./adobe_round1a/)
+### [📄 Round 1A: PDF Structure Extraction Engine](./adobe_round1a/)
 Basic PDF processing with Docker containerization and structured data extraction.
 
-### [Round 1b: Multi-Collection PDF Analysis](./adobe_round1b/)
+### [🔍 Round 1B: Persona-Driven Document Intelligence](./adobe_round1b/)
 Advanced persona-based content analysis across multiple document collections.
 
 ---
