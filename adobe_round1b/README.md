@@ -32,38 +32,68 @@ docker build --platform linux/amd64 -t adobe-round1b .
 docker run --rm -v ${PWD}\input:/app/input -v ${PWD}\output:/app/output --network none adobe-round1b
 ```
 
-### Critical Constraints
-- **Execution Time**: ≤ 10 seconds for processing multiple travel guide PDFs
-- **Model Size**: ≤ 200MB (if using ML models)
-- **Network**: No internet access allowed during runtime execution
-- **Runtime**: Must run on CPU (amd64) with 8 CPUs and 16 GB RAM
-- **Architecture**: Must work on AMD64, not ARM-specific
+📌 Problem Requirements
+🔽 Input
+PDF Collection: 3–10 related documents from any domain
 
-### Key Requirements
-- **Automatic Processing**: Process all PDFs from `/app/input` directory
-- **Persona-Based Analysis**: Use persona.json to tailor recommendations
-- **Output Format**: Generate structured `output.json` with travel recommendations
-- **Input Directory**: Read-only access only
-- **Open Source**: All libraries, models, and tools must be open source
-- **Travel Focus**: Extract relevant information for group travel planning
+Persona Definition: JSON file with persona's role, expertise, and objectives
 
-## Sample Solution Structure
+Job-to-be-Done: Specific task or question based on the persona's intent
+
+Documents may come from diverse fields like:
+
+Academic research
+
+Financial reports
+
+Educational content
+
+News articles
+
+Domain-specific manuals
+
+🔼 Output
+A structured output.json file including:
+
+Metadata (documents, persona, job, timestamp)
+
+Extracted sections with importance ranking
+
+Subsection-level refined text summaries
+
+
+
+## 📁 Project Structure
 ```
 adobe_round1b/
 ├── app/
-│   ├── main.py              # Main processing orchestrator
-│   ├── extractor.py         # PDF text extraction using PyMuPDF
-│   ├── ranker.py           # Content ranking and scoring system
-│   └── title_detector.py   # Title and header detection algorithms
+│   ├── main.py              # Orchestrates end-to-end execution
+│   ├── extractor.py         # Extracts raw text and section data from PDFs
+│   ├── ranker.py           # Scores and ranks relevant content
+│   └── title_detector.py   # Helpers for text processing, timestamps, etc.
 ├── input/
-│   ├── persona.json        # User persona and trip requirements
-│   └── *.pdf              # Travel guide PDF documents
+│   ├── persona.json        # Persona and job-to-be-done
+│   └── *.pdf              # Input document collection
 ├── output/
-│   └── output.json        # Generated travel recommendations
-├── Dockerfile             # Docker container configuration
+│   └── output.json        # Final structured output
+├── Dockerfile             # Docker environment setup
 ├── requirements.txt       # Python dependencies
-└── README.md             # This file
+└── README.md             # This documentation
 ```
+⚠️ Hackathon Constraints
+| Constraint          | Limit                        |
+| ------------------- | ---------------------------- |
+| Execution Time      | ≤ 60 seconds (3–5 PDFs)      |
+| Model Size          | ≤ 1 GB                       |
+| Runtime Environment | CPU-only (AMD64, no GPU)     |
+| Internet Access     | ❌ Not allowed during runtime |
+
+📚 Implementation Summary
+
+✔️ PDF Text Extraction
+Uses PyMuPDF to extract structured content from PDFs
+
+Identifies text spans, font sizes, and layout metadata
 
 ## Sample Implementation
 
