@@ -32,7 +32,8 @@ docker build --platform linux/amd64 -t adobe-round1b .
 docker run --rm -v ${PWD}\input:/app/input -v ${PWD}\output:/app/output --network none adobe-round1b
 ```
 
-📌 Problem Requirements
+### 📌 Problem Requirements
+
 🔽 Input
 PDF Collection: 3–10 related documents from any domain
 
@@ -52,7 +53,7 @@ News articles
 
 Domain-specific manuals
 
-🔼 Output
+### 🔼 Output
 A structured output.json file including:
 
 Metadata (documents, persona, job, timestamp)
@@ -80,7 +81,7 @@ adobe_round1b/
 ├── requirements.txt       # Python dependencies
 └── README.md             # This documentation
 ```
-⚠️ Hackathon Constraints
+### ⚠️ Hackathon Constraints
 | Constraint          | Limit                        |
 | ------------------- | ---------------------------- |
 | Execution Time      | ≤ 60 seconds (3–5 PDFs)      |
@@ -88,32 +89,32 @@ adobe_round1b/
 | Runtime Environment | CPU-only (AMD64, no GPU)     |
 | Internet Access     | ❌ Not allowed during runtime |
 
-📚 Implementation Summary
+### 📚 Implementation Summary
 
-✔️ PDF Text Extraction
+## ✔️ PDF Text Extraction
 Uses PyMuPDF to extract structured content from PDFs
 
 Identifies text spans, font sizes, and layout metadata
 
-✔️ Content Ranking Engine
+## ✔️ Content Ranking Engine
 Uses keyword and semantic matching
 
 Ranks content based on relevance to persona's job
 
-✔️ Subsection Refinement
+## ✔️ Subsection Refinement
 Extracts and summarizes fine-grained snippets within selected sections
 
 ✔️ Metadata Handling
 Attaches full context: input files, timestamp, persona profile
 
-🧠 Sample Use Cases
+### 🧠 Sample Use Cases
 | Test Case         | Persona                      | Job-to-Be-Done                                          |
 | ----------------- | ---------------------------- | ------------------------------------------------------- |
 | Academic Research | PhD in Computational Biology | Create literature review on GNNs for drug discovery     |
 | Business Analysis | Investment Analyst           | Compare R\&D spending across tech companies (2022–2024) |
 | Education         | Chemistry Student            | Study key concepts for exam on reaction kinetics        |
 
-🔎 Testing Strategy
+### 🔎 Testing Strategy
 Tested across documents with:
 
 Different structures (headings, no headings)
@@ -130,18 +131,19 @@ Extracted content aligns with job relevance
 
 System runs offline under time/memory constraints
 
-🧩 Key Modules
+### 🧩 Key Modules
 | Module         | Role                                                            |
 | -------------- | --------------------------------------------------------------- |
 | `extractor.py` | Parses documents and detects candidate content sections         |
 | `ranker.py`    | Scores sections based on persona and task alignment             |
 | `main.py`      | Coordinates input/output processing and builds output structure |
 
-🧮 Dependencies
+### 🧮 Dependencies
 PyMuPDF>=1.22.0     # PDF text extraction
 Install with:
 pip install -r requirements.txt
-🧭 Future Enhancements
+
+### 🧭 Future Enhancements
 Integrate lightweight NLP models for better semantic matching
 
 Improve multi-page context tracing for long sections
