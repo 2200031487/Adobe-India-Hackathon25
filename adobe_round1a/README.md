@@ -60,7 +60,6 @@ pdf-processor/
 └── README.md                # Documentation
 ```
 
----
 
 ## 🚧 Hackathon Constraints
 
